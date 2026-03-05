@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IAL A2 Economics | Unit 4 Ch.1 — Globalisation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --bg2: #f3f0ea;
+    --surface: #ffffff;
+    --surface2: #f7f5f0;
+    --accent: #b5451b;
+    --accent2: #1b5cb5;
+    --accent3: #7b1bb5;
+    --green: #1a7a3f;
+    --red: #b51b1b;
+    --text: #1a1810;
+    --text2: #3d3a30;
+    --muted: #8a8070;
+    --border: #ddd9d0;
+    --border2: #c8c3b8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.75;}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:100;background:rgba(250,248,244,0.96);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--border2);padding:0 2.5rem;display:flex;align-items:center;gap:1.5rem;height:54px;overflow-x:auto;}
+  nav .logo{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;white-space:nowrap;font-weight:500;}
+  nav a{font-size:0.72rem;color:var(--muted);text-decoration:none;letter-spacing:0.04em;transition:color 0.2s;white-space:nowrap;font-weight:500;}
+  nav a:hover{color:var(--accent);}
+  nav .unit-tag{font-family:'DM Mono',monospace;font-size:0.62rem;background:var(--accent);color:#fff;padding:0.18rem 0.6rem;border-radius:2px;letter-spacing:0.08em;white-space:nowrap;}
+
+  /* HERO */
+  .hero{padding:4.5rem 2.5rem 3.5rem;max-width:960px;margin:0 auto;border-bottom:1px solid var(--border);}
+  .hero-eyebrow{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;}
+  .eyebrow-line{width:2.5rem;height:1.5px;background:var(--accent);}
+  .eyebrow-text{font-family:'DM Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.18em;text-transform:uppercase;}
+  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.0;letter-spacing:-0.01em;margin-bottom:1.25rem;color:var(--text);}
+  h1 em{color:var(--accent);font-style:italic;}
+  .hero-sub{color:var(--muted);font-size:0.95rem;max-width:520px;line-height:1.7;font-weight:400;}
+  .hero-meta{display:flex;gap:1.5rem;margin-top:2rem;flex-wrap:wrap;}
+  .meta-pill{font-family:'DM Mono',monospace;font-size:0.63rem;color:var(--text2);border:1px solid var(--border2);padding:0.3rem 0.75rem;border-radius:20px;letter-spacing:0.06em;}
+
+  main{max-width:960px;margin:0 auto;padding:0 2.5rem 6rem;}
+
+  /* SECTIONS */
+  .section-block{margin-bottom:3rem;border:1.5px solid var(--border);border-radius:4px;overflow:hidden;background:var(--surface);}
+  .section-header{background:var(--bg2);padding:1.1rem 1.75rem;display:flex;align-items:center;gap:1rem;border-bottom:1.5px solid var(--border);cursor:pointer;user-select:none;transition:background 0.15s;}
+  .section-header:hover{background:var(--bg);}
+  .section-num{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--accent);background:rgba(181,69,27,0.1);padding:0.22rem 0.55rem;border-radius:3px;white-space:nowrap;font-weight:500;letter-spacing:0.06em;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;flex:1;color:var(--text);}
+  .toggle-icon{font-size:1rem;color:var(--muted);transition:transform 0.3s;}
+  .section-body{padding:1.75rem 2rem;}
+
+  h2{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--accent2);margin:1.9rem 0 0.8rem;padding-bottom:0.35rem;border-bottom:1.5px solid var(--border);display:flex;align-items:center;gap:0.75rem;font-weight:600;}
+  h2:first-child{margin-top:0;}
+  h2::before{content:'';display:block;width:3px;height:1rem;background:var(--accent2);flex-shrink:0;border-radius:2px;}
+  h3{font-size:0.83rem;color:var(--accent);font-weight:600;margin:1.1rem 0 0.45rem;text-transform:uppercase;letter-spacing:0.09em;}
+  p{color:var(--text2);font-size:0.9rem;margin-bottom:0.65rem;line-height:1.75;}
+
+  /* DEFINITION BOX */
+  .def-box{background:rgba(27,92,181,0.05);border-left:3px solid var(--accent2);padding:0.75rem 1.1rem;margin:0.65rem 0;border-radius:0 3px 3px 0;font-size:0.86rem;color:var(--text2);}
+  .def-box strong{color:var(--accent2);}
+
+  /* EXAM TIP */
+  .exam-tip{background:rgba(181,69,27,0.05);border-left:3px solid var(--accent);padding:0.75rem 1.1rem;margin:0.65rem 0;border-radius:0 3px 3px 0;font-size:0.86rem;color:var(--text2);}
+  .exam-tip::before{content:'★ EXAM TIP — ';font-weight:700;color:var(--accent);font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.06em;}
+
+  /* TABLES */
+  .table-wrap{overflow-x:auto;margin:0.9rem 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.82rem;}
+  th{background:var(--bg2);color:var(--accent);font-family:'DM Mono',monospace;font-size:0.67rem;letter-spacing:0.09em;text-transform:uppercase;padding:0.65rem 0.9rem;text-align:left;border-bottom:2px solid var(--border2);font-weight:500;}
+  td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;font-size:0.84rem;}
+  tr:hover td{background:var(--bg2);}
+  td:first-child{color:var(--text);font-weight:500;}
+
+  /* FORMULA */
+  .formula{font-family:'DM Mono',monospace;background:var(--bg2);border:1.5px solid var(--border2);padding:0.85rem 1.25rem;margin:0.65rem 0;font-size:0.84rem;border-radius:3px;color:var(--accent3);}
+  .formula span{color:var(--muted);font-size:0.7rem;}
+
+  /* PRO CON */
+  .pro-con{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin:0.9rem 0;}
+  .pro{background:rgba(26,122,63,0.05);border:1.5px solid rgba(26,122,63,0.2);padding:0.9rem 1rem;border-radius:3px;font-size:0.83rem;}
+  .pro strong{color:var(--green);display:block;margin-bottom:0.45rem;font-size:0.69rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Mono',monospace;}
+  .con{background:rgba(181,27,27,0.05);border:1.5px solid rgba(181,27,27,0.18);padding:0.9rem 1rem;border-radius:3px;font-size:0.83rem;}
+  .con strong{color:var(--red);display:block;margin-bottom:0.45rem;font-size:0.69rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Mono',monospace;}
+  .pro li,.con li{margin-left:1.1rem;margin-bottom:0.28rem;color:var(--text2);}
+
+  /* QUESTION CARDS */
+  .question-card{background:var(--surface);border:1.5px solid var(--border);border-radius:3px;margin-bottom:1.2rem;overflow:hidden;}
+  .q-header{padding:0.9rem 1.35rem;background:var(--bg2);display:flex;align-items:center;gap:0.9rem;border-bottom:1.5px solid var(--border);cursor:pointer;flex-wrap:wrap;transition:background 0.15s;}
+  .q-header:hover{background:rgba(181,69,27,0.04);}
+  .q-marks{font-family:'DM Mono',monospace;font-size:0.65rem;background:rgba(181,69,27,0.12);color:var(--accent);padding:0.18rem 0.52rem;border-radius:3px;white-space:nowrap;font-weight:500;}
+  .q-text{font-size:0.88rem;color:var(--text);flex:1;font-weight:500;}
+  .q-body{padding:1.35rem;display:none;border-top:1.5px solid var(--border);}
+  .q-body.open{display:block;}
+  .answer-section h4{font-size:0.69rem;color:var(--accent3);font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.65rem;}
+  .mark-scheme{background:rgba(123,27,181,0.04);border-left:3px solid var(--accent3);padding:0.75rem 1.1rem;margin-top:0.9rem;border-radius:0 3px 3px 0;font-size:0.83rem;color:var(--text2);}
+  .mark-scheme strong{color:var(--accent3);font-family:'DM Mono',monospace;font-size:0.7rem;}
+
+  /* TAGS */
+  .tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.6rem;padding:0.13rem 0.45rem;border-radius:3px;margin-right:0.3rem;letter-spacing:0.05em;}
+  .tag-yr{background:rgba(26,122,63,0.12);color:var(--green);}
+
+  /* DIVIDER */
+  .div{height:1.5px;background:var(--border);margin:1.5rem 0;}
+
+  /* GRID CARDS */
+  .obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:0.9rem;margin:0.9rem 0;}
+  .obj-card{background:var(--bg2);border:1.5px solid var(--border);padding:1rem 1.1rem;border-radius:3px;}
+  .obj-card h4{font-size:0.73rem;color:var(--accent);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;}
+  .obj-card p{font-size:0.8rem;color:var(--muted);margin:0;}
+
+  /* STAT CALLOUT */
+  .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.8rem;margin:1rem 0;}
+  .stat-card{background:var(--bg2);border:1.5px solid var(--border2);padding:1rem 1.1rem;border-radius:3px;text-align:center;}
+  .stat-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:0.3rem;}
+  .stat-label{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;}
+
+  /* BACK TO TOP */
+  .back-top{position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;font-size:1rem;cursor:pointer;border-radius:3px;text-decoration:none;font-weight:700;box-shadow:0 2px 12px rgba(181,69,27,0.25);}
+
+  @media(max-width:600px){.pro-con{grid-template-columns:1fr;}nav{gap:0.75rem;}.stat-row{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="logo">IAL A2 Econ</span>
+  <span class="unit-tag">UNIT 4</span>
+  <a href="#s1">Characteristics</a>
+  <a href="#s2">Causes</a>
+  <a href="#s3">FDI & TNCs</a>
+  <a href="#s4">Effects</a>
+  <a href="#pp">Past Papers</a>
+  <a href="#twenty">20-Mark Qs</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">
+    <div class="eyebrow-line"></div>
+    <span class="eyebrow-text">Unit 4 · Chapter 1 · 4.3.1</span>
+  </div>
+  <h1>Causes &amp; Effects<br>of <em>Globalisation</em></h1>
+  <p class="hero-sub">Complete exam notes covering the characteristics, causes, and full effects of globalisation — including TNCs, FDI, trade liberalisation, and the costs and benefits — plus past paper answers and the 10 most examined 20-mark questions.</p>
+  <div class="hero-meta">
+    <span class="meta-pill">Edexcel IAL A2</span>
+    <span class="meta-pill">Unit 4 — Global Economy</span>
+    <span class="meta-pill">No Password Required</span>
+  </div>
+</div>
+
+<main>
+
+<!-- ================================ -->
+<!-- S1: CHARACTERISTICS -->
+<!-- ================================ -->
+<div class="section-block" id="s1">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">01</span>
+    <span class="section-title">Characteristics of Globalisation</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <h2>What is Globalisation?</h2>
+    <div class="def-box"><strong>Globalisation:</strong> The process by which national economies, societies, and cultures become increasingly integrated through international trade, investment, migration, and the flow of information and technology. It represents the growing interdependence of the world's economies.</div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-num">~50%</div><div class="stat-label">World GDP from trade (2022)</div></div>
+      <div class="stat-card"><div class="stat-num">$1.5tn</div><div class="stat-label">Global FDI inflows (2022)</div></div>
+      <div class="stat-card"><div class="stat-num">280m+</div><div class="stat-label">International migrants worldwide</div></div>
+      <div class="stat-card"><div class="stat-num">100+</div><div class="stat-label">Countries in WTO (164 members)</div></div>
+    </div>
+
+    <h2>Increase in Trade as a Proportion of GDP</h2>
+    <p>Trade openness — measured as (exports + imports) / GDP — has risen dramatically over the past 50 years. In 1970, world trade was approximately 25% of world GDP. By the 2010s, it had peaked at over 60%. This reflects the increasing specialisation of national economies and the global fragmentation of production (global value chains).</p>
+    <p><strong>Why it matters as a measure:</strong> Rising trade-to-GDP ratio indicates that economies are becoming more open and interdependent — a higher proportion of output is traded internationally and a higher proportion of consumption is met by imports. A country with a high trade-to-GDP ratio is more exposed to global economic conditions — both benefiting from global growth and vulnerable to global downturns.</p>
+    <div class="exam-tip">Trade as a proportion of GDP is the primary quantitative indicator of globalisation. Note that it fell after the 2008 global financial crisis and again after COVID-19 — "slowbalisation" or "deglobalisation" is a contemporary evaluation point that challenges the assumption globalisation always increases.</div>
+
+    <h2>Increase in Importance of TNCs and FDI</h2>
+    <div class="def-box"><strong>Transnational Corporation (TNC):</strong> A firm that operates in more than one country, with production, distribution, or service activities spread across multiple national boundaries. Also called multinational corporations (MNCs). Examples: Apple, Toyota, Shell, HSBC, Amazon, Nestlé.</div>
+    <div class="def-box"><strong>Foreign Direct Investment (FDI):</strong> Investment made by a firm or individual in one country into business interests in another country, in the form of establishing business operations or acquiring business assets — e.g. building a factory, buying a majority stake in a foreign company. FDI involves a lasting interest and degree of control (unlike portfolio investment in foreign shares/bonds).</div>
+    <p>TNCs now account for a disproportionate share of global output, trade, and employment. The top 100 TNCs account for over a quarter of global GDP. Intra-firm trade (between different subsidiaries of the same TNC) now accounts for approximately 30-40% of global trade — meaning globalisation is partly driven by internal corporate decisions rather than arm's length market transactions.</p>
+
+    <h2>Increase in Migration</h2>
+    <p>The number of people living outside their country of birth has risen from approximately 84 million in 1970 to over 280 million today. International migration reflects both economic factors (wage differentials, employment opportunities) and non-economic factors (conflict, climate, family reunification).</p>
+    <p><strong>Types of migration relevant to globalisation:</strong> ① <strong>Labour migration:</strong> Workers moving from lower-wage to higher-wage countries (e.g. Eastern Europe to Western Europe post-2004 EU enlargement; South Asia to Gulf States). ② <strong>Skilled migration (brain drain/gain):</strong> Highly qualified workers (doctors, engineers, tech workers) moving internationally. ③ <strong>Refugee/forced migration:</strong> Driven by conflict and climate rather than economic incentives — but still affects labour markets.</p>
+    <div class="exam-tip">Migration is both a characteristic AND a cause of globalisation — it is also an effect. In essays, be precise about which role migration is playing: is it a driver of globalisation (lowering labour costs, spreading skills) or a consequence (people responding to globalised economic opportunities)?</div>
+
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- S2: CAUSES OF GLOBALISATION -->
+<!-- ================================ -->
+<div class="section-block" id="s2">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">02</span>
+    <span class="section-title">Causes of Globalisation</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <h2>Trade Liberalisation</h2>
+    <div class="def-box"><strong>Trade Liberalisation:</strong> The removal or reduction of barriers to international trade — including tariffs (import taxes), quotas (quantity limits), subsidies to domestic producers, and non-tariff barriers (regulatory standards, import licences). Enables goods, services, and capital to flow more freely across borders.</div>
+    <p>The <strong>General Agreement on Tariffs and Trade (GATT)</strong>, established 1947, and its successor the <strong>World Trade Organisation (WTO)</strong>, established 1995, have overseen successive rounds of multilateral trade liberalisation. Average global tariffs fell from over 40% in 1947 to under 5% today. This dramatic reduction in trade barriers is one of the single most important causes of globalisation.</p>
+    <p><strong>Mechanisms by which trade liberalisation drives globalisation:</strong> ① Lower tariffs → imported goods become cheaper → consumers buy more internationally. ② Firms access larger markets → economies of scale → more production for export. ③ Specialisation according to comparative advantage → more cross-border trade. ④ Reduced barriers to capital flows → FDI easier → TNCs expand globally.</p>
+
+    <h2>Increased Number and Size of Trading Blocs</h2>
+    <div class="def-box"><strong>Trading Bloc:</strong> A group of countries that have agreed to reduce or eliminate trade barriers between themselves, often while maintaining common external barriers against non-members. Examples: EU (customs union + single market), ASEAN, NAFTA/USMCA, MERCOSUR, African Continental Free Trade Area (AfCFTA).</div>
+    <p>Trading blocs drive globalisation within the bloc — free movement of goods, services, capital, and labour between members. The EU Single Market (1992) created the world's largest economic area with free movement of all four factors. NAFTA (1994) integrated North American supply chains. Even though blocs may raise barriers for non-members, the net global effect has been a major increase in trade and investment flows between members, which represent large shares of world GDP.</p>
+    <div class="exam-tip">Evaluation: trading blocs can be "trade creating" (replacing less efficient domestic production with cheaper imports from bloc partners — welfare gain) or "trade diverting" (replacing cheaper non-bloc imports with more expensive bloc imports due to common external tariff — welfare loss). This distinction is key for evaluation in any essay about trading blocs.</div>
+
+    <h2>Political Change: Breakdown of the Soviet System and Opening Up of China</h2>
+    <p><strong>Soviet collapse (1989–1991):</strong> The end of the Cold War opened Eastern Europe and former Soviet states to market economies and international trade. Countries like Poland, Czech Republic, Hungary rapidly integrated into the global economy and joined the EU. Russia opened to Western investment (though this has since reversed significantly). Approximately 400 million people were brought into the global market economy.</p>
+    <p><strong>China's opening up:</strong> China's economic reforms beginning in 1978 (Deng Xiaoping's "Reform and Opening Up" policy) progressively integrated China into the global economy. China joined the WTO in 2001 — a watershed moment that accelerated global integration. China became the world's largest exporter by 2010. The entry of China's enormous, low-cost labour force into the global economy fundamentally transformed global production — driving down costs of manufactured goods worldwide ("China price effect") but also displacing manufacturing employment in developed countries.</p>
+    <p>Together, these political changes brought an estimated 2 billion new workers and consumers into the global market economy — perhaps the single most transformative factor in 1990s-2000s globalisation.</p>
+
+    <h2>Reduced Cost of Transport and Communications</h2>
+    <p><strong>Transport cost reductions:</strong> The containerisation revolution (standardised shipping containers from the 1960s) dramatically reduced the cost of shipping goods — a 90% reduction in shipping costs per unit between 1950 and 2000. Air freight became viable for high-value, time-sensitive goods. Lower transport costs make international trade profitable for goods that previously could not bear the cost of long-distance shipping.</p>
+    <p><strong>Communications revolution:</strong> The internet and digital technology have effectively reduced the cost of global communication to near zero. Firms can now manage globally dispersed supply chains in real time. Services that previously required physical proximity (legal, financial, medical, educational) can now be traded internationally (offshoring of call centres, software development, back-office functions). Digital platforms (Amazon, eBay, Alibaba) allow even small firms to sell globally.</p>
+
+    <h2>Increased Significance of TNCs</h2>
+    <p>TNCs are both a cause and a consequence of globalisation — they drive further integration as they expand. By relocating production to lower-cost countries, TNCs accelerate the globalisation of supply chains. By marketing globally, they spread tastes and consumption patterns (cultural globalisation). By investing in foreign markets (FDI), they transfer capital, technology, and management expertise — linking national economies more closely.</p>
+    <p>The ability of TNCs to organise global value chains — designing in one country, manufacturing components in several others, assembling in another, and selling worldwide — has fundamentally changed the nature of international trade from trade in final goods to trade in tasks and intermediate inputs.</p>
+
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- S3: FDI AND TNCs -->
+<!-- ================================ -->
+<div class="section-block" id="s3">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">03</span>
+    <span class="section-title">FDI by TNCs — Reasons &amp; Impact</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <h2>Reasons Why TNCs Undertake FDI</h2>
+    <div class="table-wrap">
+    <table>
+      <tr><th>Motive</th><th>Explanation</th><th>Example</th></tr>
+      <tr>
+        <td>Resource seeking</td>
+        <td>Access natural resources (oil, minerals, agricultural land) not available or too costly in the home country. Vertical integration backward — securing input supply.</td>
+        <td>BP and Shell in oil-rich developing countries; Chinese firms investing in African minerals</td>
+      </tr>
+      <tr>
+        <td>Market seeking</td>
+        <td>Gain access to large or fast-growing foreign markets — either because of trade barriers (tariff-jumping) or because local production is more competitive due to proximity to consumers. "If you can't export there, produce there."</td>
+        <td>Japanese car firms (Toyota, Honda) building plants in the US to avoid import quotas; EU firms investing in the UK post-Brexit to maintain market access</td>
+      </tr>
+      <tr>
+        <td>Efficiency seeking</td>
+        <td>Relocate production to countries with lower labour costs, less regulation, or greater productivity — reducing average costs. Particularly important in labour-intensive manufacturing.</td>
+        <td>Nike and Apple manufacturing in Vietnam and China; call centre offshoring to India (English-speaking, low wages, time zone advantage)</td>
+      </tr>
+      <tr>
+        <td>Strategic asset seeking</td>
+        <td>Acquire technology, brands, patents, or management expertise through acquisition of foreign firms — building competitive advantage.</td>
+        <td>Chinese firm Lenovo acquiring IBM's PC division; SoftBank acquiring ARM Holdings for semiconductor IP</td>
+      </tr>
+      <tr>
+        <td>Tax and regulatory arbitrage</td>
+        <td>Locate in low-tax jurisdictions or areas with lighter regulation — reducing the firm's global tax burden through transfer pricing and profit shifting.</td>
+        <td>Apple's Irish subsidiary (12.5% corporation tax); Amazon's Luxembourg structure; pharmaceutical firms in Puerto Rico</td>
+      </tr>
+    </table>
+    </div>
+
+    <h2>Impact of FDI on Recipient (Host) Countries</h2>
+    <div class="pro-con">
+      <div class="pro"><strong>✓ Potential Benefits</strong>
+        <li><strong>Capital inflows:</strong> FDI brings finance for investment that domestic savings cannot provide — particularly important for developing countries with shallow capital markets</li>
+        <li><strong>Employment creation:</strong> TNC factories and offices create jobs — directly and through supply chain linkages with local firms</li>
+        <li><strong>Technology and knowledge transfer:</strong> TNCs bring advanced technology, management practices, and production techniques — "technology spillovers" to domestic firms through worker movement and supplier relationships</li>
+        <li><strong>Export promotion:</strong> TNC production in host country may boost exports — improving the trade balance and raising foreign exchange earnings</li>
+        <li><strong>Tax revenue:</strong> Corporate taxes, employment taxes, and VAT from TNC activity increase government revenue for public services</li>
+        <li><strong>Infrastructure investment:</strong> TNCs may invest in roads, ports, and utilities to support their operations — benefiting the wider economy</li>
+        <li><strong>Competition:</strong> TNC entry increases competitive pressure on domestic firms → efficiency improvements, lower prices for consumers</li>
+      </div>
+      <div class="con"><strong>✗ Potential Costs</strong>
+        <li><strong>Profit repatriation:</strong> Profits flow back to the home country rather than being reinvested domestically — reducing the net benefit to the host country (distinction between GDP and GNI)</li>
+        <li><strong>Transfer pricing / tax avoidance:</strong> TNCs manipulate internal prices to shift profits to low-tax jurisdictions — host country loses corporate tax revenue despite hosting economic activity</li>
+        <li><strong>Enclave economy:</strong> If TNC uses mainly imported inputs and expatriate managers, linkages to domestic economy are weak — jobs and benefits are encapsulated within the TNC, not diffused through the wider economy</li>
+        <li><strong>Labour exploitation:</strong> TNCs may deliberately locate in countries with weak labour laws to minimise wages and conditions — "race to the bottom" on labour standards</li>
+        <li><strong>Environmental degradation:</strong> TNCs may locate polluting industries in countries with weak environmental regulation — "pollution haven" hypothesis</li>
+        <li><strong>Crowding out domestic firms:</strong> TNC competition may bankrupt less efficient domestic firms — destroying established industries and supply chains</li>
+        <li><strong>Economic dependence:</strong> Host country becomes dependent on TNC investment that can be withdrawn — relocation risk if costs rise or regulations tighten ("footloose capital")</li>
+        <li><strong>Political influence:</strong> Very large TNCs may exert undue influence on domestic policy — lobbying for favourable regulation, tax treatment, or subsidies at the expense of the public interest</li>
+      </div>
+    </div>
+
+    <div class="div"></div>
+
+    <h3>GDP vs GNI: The FDI Accounting Distinction</h3>
+    <div class="def-box"><strong>GDP (Gross Domestic Product):</strong> The total value of goods and services produced within a country's borders — regardless of who owns the producing firms.</div>
+    <div class="def-box"><strong>GNI (Gross National Income):</strong> The total income earned by a country's residents — including income earned abroad, minus income earned in the country by foreign residents (including TNC profit repatriation).</div>
+    <p>For countries hosting significant FDI, GDP > GNI — the country produces a lot (GDP) but profits flow abroad (reducing GNI). Ireland is the extreme case: GDP is dramatically higher than GNI because US tech firms (Apple, Google, Facebook) book enormous revenues through Irish subsidiaries. Irish residents' actual living standards are better measured by GNI than GDP.</p>
+    <div class="exam-tip">The GDP vs GNI distinction is a critical evaluation point for any question about the benefits of FDI to host countries. If TNC profits are repatriated, the host country sees GDP rise but GNI rise much less — the true welfare gain to residents is smaller than headline growth figures suggest.</div>
+
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- S4: EFFECTS OF GLOBALISATION -->
+<!-- ================================ -->
+<div class="section-block" id="s4">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">04</span>
+    <span class="section-title">Effects of Globalisation</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+
+    <h2>Possible Benefits of Globalisation</h2>
+
+    <div class="table-wrap">
+    <table>
+      <tr><th>Benefit</th><th>Mechanism</th><th>Evidence / Evaluation</th></tr>
+      <tr>
+        <td>Increased economic growth</td>
+        <td>Trade expands market size → firms specialise → productivity rises → GDP growth. FDI brings capital and technology. More efficient global allocation of resources (comparative advantage). World Bank data: countries that liberalised trade grew 1.5% faster per year on average than those that didn't (1990s-2000s).</td>
+        <td>Growth benefits unevenly distributed — China gained enormously (200m+ lifted from poverty); sub-Saharan Africa benefited less. "Slowbalisation" post-2008: growth from globalisation has moderated. COVID-19 revealed risks of over-reliance on global supply chains.</td>
+      </tr>
+      <tr>
+        <td>Increased tax revenue</td>
+        <td>FDI and TNC activity creates taxable economic activity — corporate tax, employment tax, VAT. Government has more resources for public services and investment.</td>
+        <td>Offset by transfer pricing: TNCs shift profits to low-tax jurisdictions → host countries lose corporate tax on activity generated domestically. OECD Pillar 2: 15% global minimum corporate tax (2024) partly addresses this. Ireland's GDP inflated by TNC booking — but tax yield lower than GDP implies.</td>
+      </tr>
+      <tr>
+        <td>Economies of scale</td>
+        <td>Access to global markets allows firms to produce at much larger scale → LRAC falls → more productive efficiency. Particularly important in industries with high fixed costs and large MES (aerospace, automotive, semiconductors).</td>
+        <td>EoS benefits accrue mainly to large TNCs and developed country firms — small domestic producers in developing countries cannot achieve same scale. EoS may contribute to monopolistic global markets (Big Tech).</td>
+      </tr>
+      <tr>
+        <td>Lower prices and higher consumer surplus</td>
+        <td>Globalisation → competition from imports → domestic firms must cut prices. Low-cost manufacturing in China/Vietnam → manufactured goods dramatically cheaper globally. "China price effect": consumer electronics, clothing, household goods prices fell in real terms for decades.</td>
+        <td>Price falls benefited consumers in developed countries significantly (effectively a large real wage rise for low/middle income households). BUT: displaced workers in manufacturing paid a higher price (job losses, wage stagnation). Environmental cost of cheap goods often not priced into market.</td>
+      </tr>
+      <tr>
+        <td>More choice</td>
+        <td>Access to global variety — consumers can choose from products made worldwide. Cultural exchange — global cuisines, music, art. Technology: global competition in tech drives faster innovation and product development.</td>
+        <td>Cultural homogenisation concern: global spread of dominant cultures (US media, fast food, fashion) may displace local cultures. But local cultures have also spread globally (K-pop, Bollywood, global cuisine).</td>
+      </tr>
+      <tr>
+        <td>Higher living standards</td>
+        <td>Rising incomes in emerging economies (especially East Asia) → hundreds of millions lifted from poverty. World Bank: global extreme poverty fell from 36% (1990) to under 10% (2019) — largely driven by China's integration into the global economy. Access to better healthcare, education, and technology via globalisation.</td>
+        <td>Benefits distributed very unequally — within countries, globalisation has increased inequality even as it reduced between-country inequality. Workers in tradeable sectors in developed countries faced wage stagnation from import competition ("China shock" — Autor, Dorn &amp; Hanson 2013).</td>
+      </tr>
+    </table>
+    </div>
+
+    <h2>Possible Costs of Globalisation</h2>
+
+    <div class="table-wrap">
+    <table>
+      <tr><th>Cost</th><th>Mechanism</th><th>Evidence / Evaluation</th></tr>
+      <tr>
+        <td>Displaced workers</td>
+        <td>Import competition from low-cost countries destroys jobs in tradeable manufacturing sectors (textiles, steel, electronics) in developed countries. Workers face occupational AND geographical immobility — structural unemployment in former industrial regions. "China shock" (Autor, Dorn &amp; Hanson, 2013): US counties most exposed to Chinese import competition saw significant manufacturing job losses and persistent wage depression, not compensated by growth elsewhere.</td>
+        <td>Free trade theory predicts: workers displaced from declining industries move to expanding export industries. In practice, occupational and geographical immobility means displaced workers remain unemployed or move to lower-wage service sector jobs. Adjustment assistance programmes (e.g. Trade Adjustment Assistance in US) have had limited effectiveness. Political backlash: Brexit, Trump trade wars partly driven by communities left behind by globalisation.</td>
+      </tr>
+      <tr>
+        <td>Exploitation of workers</td>
+        <td>TNCs and global buyers (fast fashion brands, electronics firms) source from countries with weak labour regulations — low wages, long hours, poor safety, child labour. "Race to the bottom": countries compete for FDI by lowering labour standards. Bangladesh garment sector: Rana Plaza collapse (2013) — 1,134 workers killed in unsafe factory producing for Western brands.</td>
+        <td>Global supply chain transparency laws (UK Modern Slavery Act 2015, EU Supply Chain Due Diligence Directive 2024) attempt to address this. Consumer and NGO pressure has pushed some brands to improve standards. But enforcement in global supply chains with multiple tiers of subcontracting is extremely difficult. Economic counter-argument: even exploitative TNC wages may be higher than local alternatives — workers choose TNC employment voluntarily.</td>
+      </tr>
+      <tr>
+        <td>Environmental impact of increased trade</td>
+        <td>Increased shipping, air freight, and road transport → higher carbon emissions. Global supply chains multiply the "food miles" and transport carbon footprint of products. TNCs may relocate polluting production to countries with weaker environmental regulation ("pollution haven" hypothesis). Increased consumption of cheap goods → more waste, more resource extraction.</td>
+        <td>Mixed evidence on pollution haven hypothesis — FDI often brings cleaner technology than domestic alternatives. However, shipping emissions account for ~3% of global CO2 and are poorly regulated. Carbon border adjustment mechanisms (EU CBAM from 2026) attempt to level the environmental playing field — an explicit attempt to prevent pollution havens undermining climate policy.</td>
+      </tr>
+      <tr>
+        <td>Loss of tax revenue from transfer pricing</td>
+        <td>TNCs manipulate internal prices between subsidiaries (transfer pricing) to shift profits from high-tax to low-tax jurisdictions — reducing global tax liability below what they would pay if taxed on a country-by-country basis. OECD estimates: corporate profit shifting costs governments $100-240bn per year in lost tax revenue globally.</td>
+        <td>OECD BEPS (Base Erosion and Profit Shifting) project and Pillar 2 global minimum corporate tax (15%, from 2024) are designed to address this. However, implementation is incomplete and enforcement challenging. Developing countries most affected — they have fewer resources to challenge TNC transfer pricing and more dependent on corporate tax revenue relative to GDP.</td>
+      </tr>
+      <tr>
+        <td>Increased income inequality within countries</td>
+        <td>Globalisation raises returns to skilled labour (high demand globally) and to capital (more mobile, earns higher returns) while depressing wages of unskilled workers in developed countries (competing with low-wage global labour). Skill-biased technological change amplifies this. Within-country inequality has risen in most developed countries since 1980 despite rising average incomes — Gini coefficients have increased in US, UK, and many other globalised economies.</td>
+        <td>Between-country inequality has FALLEN (China, India, others catching up) while within-country inequality has risen. This creates a political paradox: globalisation makes the world more equal between nations while making societies more unequal within them. Piketty: returns to capital rising relative to labour → globalisation (mobile capital) exacerbates this trend. Kuznets curve: inequality may rise then fall as development proceeds.</td>
+      </tr>
+      <tr>
+        <td>Influence of TNCs on domestic economic policy</td>
+        <td>Large TNCs can implicitly threaten to relocate if domestic policies become unfavourable (higher taxes, stronger labour/environmental regulation) — this "regulatory chill" effect constrains what governments can do. "Capital flight" — if investment is mobile, governments compete for it by reducing taxes and regulation. TNCs lobby extensively for favourable policy — trade agreements written partly to serve TNC interests (investor-state dispute settlement clauses allow TNCs to sue governments for policies that reduce their profits).</td>
+        <td>Irish 12.5% corporation tax sustained for decades partly by threat of US TNC relocation. UK post-Brexit trade policy partly shaped by desire to attract US FDI. Investor-state dispute settlement (ISDS) clauses in trade agreements allow TNCs to sue governments — Philip Morris sued Australia over cigarette plain packaging using ISDS. Limits national sovereignty over economic policy — a fundamental tension between globalisation and democratic governance.</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="div"></div>
+
+    <h3>The Globalisation Trade-Off: Summary</h3>
+    <div class="pro-con">
+      <div class="pro"><strong>✓ Winners from Globalisation</strong>
+        <li>Consumers in developed countries (cheaper goods, more choice)</li>
+        <li>Workers in export-oriented developing countries (China, Vietnam, Bangladesh — rising wages and employment)</li>
+        <li>Skilled workers and professionals in all countries (global demand for skills)</li>
+        <li>Shareholders and owners of capital (mobile capital earns higher global returns)</li>
+        <li>TNCs (access to global markets, lower costs, tax arbitrage)</li>
+      </div>
+      <div class="con"><strong>✗ Losers from Globalisation</strong>
+        <li>Manufacturing workers in developed countries (import competition, wage depression)</li>
+        <li>Workers in non-tradeable sectors competing with migrant workers (downward wage pressure)</li>
+        <li>Governments losing tax revenue to transfer pricing</li>
+        <li>Environment (increased emissions, pollution haven effects)</li>
+        <li>Workers in developing country supply chains (exploitation, low wages, unsafe conditions)</li>
+        <li>Local cultures displaced by global cultural homogenisation</li>
+      </div>
+    </div>
+    <div class="exam-tip">The distinction between winners and losers from globalisation — and specifically the within-country vs between-country inequality story — is the most sophisticated evaluative framework for this topic. Cite Autor, Dorn &amp; Hanson (2013) on the "China shock" and Piketty on capital vs labour returns. These name-drops signal intellectual depth and access Band 4 marks.</div>
+
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- PAST PAPER QUESTIONS -->
+<!-- ================================ -->
+<div class="section-block" id="pp">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">PP</span>
+    <span class="section-title">Past Paper Questions &amp; Model Answers</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--muted);font-size:0.83rem;margin-bottom:1.25rem;">Click to reveal model answers after attempting each question yourself. ↓</p>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">4 MARKS</span>
+        <span class="q-text">Explain what is meant by Foreign Direct Investment (FDI) and distinguish it from portfolio investment.</span>
+        <span class="tag tag-yr">Jun 2022</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p>Foreign Direct Investment (FDI) refers to investment made by a firm or individual in one country into business operations in another country, involving a lasting ownership interest and significant degree of management control. Examples include building a factory abroad, acquiring a majority stake in a foreign company, or establishing a subsidiary. FDI is distinguished from portfolio investment, which involves purchasing foreign financial assets — shares, bonds, or other securities — without acquiring management control or a lasting interest. Portfolio investment is driven by short-run returns and can be quickly reversed ("hot money"); FDI represents a long-term commitment to production in the host country and is less reversible. For example, Toyota building a car factory in the UK is FDI; a UK pension fund buying shares in a Japanese company is portfolio investment.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 1 mark: FDI definition (cross-border investment with control/lasting interest). 1 mark: portfolio investment definition (financial assets, no control). 1 mark: key distinction (control/permanence/reversibility). 1 mark: example illustrating both types.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">4 MARKS</span>
+        <span class="q-text">Explain TWO reasons why a TNC might undertake FDI in a developing country.</span>
+        <span class="tag tag-yr">Jan 2023</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p><strong>Reason 1 — Efficiency seeking (lower labour costs):</strong> Developing countries typically have much lower wages than developed countries — reflecting lower costs of living and surplus rural labour. A TNC in labour-intensive manufacturing (clothing, footwear, electronics assembly) can dramatically reduce average production costs by relocating or offshoring production to developing countries. This efficiency-seeking FDI is profit-driven — lower input costs expand profit margins or allow the TNC to price more competitively globally.</p>
+          <p><strong>Reason 2 — Resource seeking (access to natural resources):</strong> Many developing countries possess abundant natural resources — oil (Nigeria, Angola), minerals (Democratic Republic of Congo, Zambia), timber, agricultural land. TNCs in extractive industries invest to access these resources that are unavailable or prohibitively expensive in their home countries. This represents backward vertical integration — the TNC secures its supply chain inputs through FDI rather than purchasing on open markets, ensuring supply security and capturing the resource margin.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 2 marks per reason: 1 mark identifying the motive; 1 mark explaining the mechanism by which it drives FDI. Generic answers without mechanism limited to 1 mark per reason.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">8 MARKS</span>
+        <span class="q-text">Explain how the growth of TNCs has contributed to the process of globalisation.</span>
+        <span class="tag tag-yr">Jun 2021</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p><strong>Channel 1 — Global value chains and trade in intermediates:</strong> TNCs organise production across multiple countries — designing in one country, manufacturing components in several others, and assembling in another. This global fragmentation of production creates enormous volumes of cross-border trade in intermediate goods and services that wouldn't occur if production were nationally contained. Apple designs in the US, sources components from Japan, South Korea, and Germany, assembles in China, and sells globally. This intra-firm and inter-firm trade in components has been one of the fastest-growing parts of international trade — directly driven by TNC expansion. As TNCs grow in size and number, they build ever more complex global supply chains, increasing the interdependence of national economies.</p>
+          <p><strong>Channel 2 — FDI flows linking national economies:</strong> TNCs undertake FDI — building factories, acquiring companies, and establishing subsidiaries across the world. These capital flows directly link national economies — the host country receives capital, technology, and management expertise, while the home country establishes production or market access abroad. The growth of TNC-driven FDI since the 1980s has been one of the primary mechanisms of globalisation: it connects financial markets (capital flows), labour markets (employment and wages in host countries), and product markets (output sold globally) across national boundaries. As the number and size of TNCs has grown, these linkages have multiplied — creating the integrated global economy that characterises contemporary globalisation.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 4 marks per channel: 1 mark identifying the mechanism; 2 marks explaining how it drives globalisation with a chain of reasoning; 1 mark example or development. Both channels must link TNC activity explicitly to increased economic integration across borders.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">4 MARKS</span>
+        <span class="q-text">Explain the difference between trade creation and trade diversion in the context of trading blocs.</span>
+        <span class="tag tag-yr">Jan 2020</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p>Trade creation occurs when a country joining a trading bloc replaces high-cost domestic production with lower-cost imports from bloc members — because the removal of internal barriers allows cheaper partner-country goods to compete with previously protected domestic industry. This represents a welfare gain: the country now imports from a more efficient source. Trade diversion occurs when a country joining a trading bloc switches from buying from the lowest-cost global producer (outside the bloc) to a higher-cost producer inside the bloc — because the common external tariff makes the non-member's goods artificially expensive. This represents a potential welfare loss: the country is no longer sourcing from the most efficient global producer. A trading bloc is welfare-improving overall if the gains from trade creation exceed the losses from trade diversion.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 1 mark each: trade creation definition (replacing domestic with cheaper bloc imports); trade diversion definition (replacing cheaper non-bloc with dearer bloc imports); the welfare distinction (creation = gain, diversion = loss); the net welfare assessment (depends on which dominates).</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">8 MARKS</span>
+        <span class="q-text">Explain the costs of globalisation for workers in developed countries.</span>
+        <span class="tag tag-yr">Jun 2023</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p><strong>Cost 1 — Job displacement and structural unemployment:</strong> Globalisation exposes workers in developed countries to competition from low-cost producers in China, Vietnam, Bangladesh, and other emerging economies. Manufacturing workers in industries like textiles, steel, consumer electronics, and auto components face import competition that domestic firms cannot match — leading to plant closures and large-scale job losses. Crucially, these workers face occupational immobility (their manufacturing skills are not easily transferable to growing service sectors) and geographical immobility (they are concentrated in regions — rust belt, former mining communities — where alternative employment is limited). The result is persistent structural unemployment in specific communities, not temporary frictional unemployment easily resolved by moving to a new job. Autor, Dorn and Hanson's (2013) "China shock" study found that US counties most exposed to Chinese import competition in the 1990s-2000s suffered significant and long-lasting manufacturing job losses with limited offsetting job creation.</p>
+          <p><strong>Cost 2 — Wage depression and increased inequality:</strong> Even workers who retain employment in sectors facing import competition experience downward pressure on wages — firms threaten to offshore production unless workers accept lower pay and worse conditions. The threat of relocation is credible (footloose capital) and gives employers significant bargaining power over workers. Additionally, the influx of low-skilled migrants (attracted by higher wages in developed countries relative to their home countries) increases the supply of labour in low-skill segments → downward pressure on wages at the bottom of the income distribution. The combined effect is rising wage inequality within developed countries — the skilled premium rises while wages for routine manual and cognitive tasks stagnate or fall. This has been a persistent feature of developed country labour markets since the 1980s, and globalisation is widely identified as a contributing factor alongside technological change.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 4 marks per cost: 1 mark identifying; 2 marks explaining mechanism with chain of reasoning; 1 mark evidence/development (Autor et al. earns the development mark). Must focus specifically on developed country workers — not developing country workers.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">4 MARKS</span>
+        <span class="q-text">Explain how transfer pricing by TNCs leads to a loss of tax revenue for host governments.</span>
+        <span class="tag tag-yr">Jan 2022</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Model Answer</h4>
+          <p>Transfer pricing refers to the prices set by a TNC for transactions between its own subsidiaries in different countries. Because the TNC controls both sides of the transaction, it can set these internal prices at levels that artificially shift profits from high-tax to low-tax jurisdictions — regardless of where the economic activity actually occurs. For example, a TNC might have its intellectual property (patents, brand) held in a low-tax subsidiary (e.g. Ireland, Luxembourg, Cayman Islands). Its operating subsidiaries in high-tax countries (UK, Germany, France) then pay large royalty fees to the low-tax IP subsidiary — reducing their taxable profit in the high-tax country and shifting profits to where tax rates are very low. The host government in the high-tax country loses corporate tax revenue that it would have collected if the profits had been taxed where the economic activity (sales, production) actually occurred. The OECD estimates this costs governments $100-240 billion per year globally.</p>
+        </div>
+        <div class="mark-scheme"><strong>Mark Scheme:</strong> 1 mark: transfer pricing definition (internal prices between subsidiaries). 1 mark: mechanism (inflate costs/reduce revenues in high-tax country). 1 mark: specific example (royalties, management fees, IP licensing). 1 mark: consequence (reduced taxable profit in host country → tax revenue loss).</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================================ -->
+<!-- 20-MARK QUESTIONS -->
+<!-- ================================ -->
+<div class="section-block" id="twenty">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">20M</span>
+    <span class="section-title">Top 10 Most Common 20-Mark Questions</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <p style="color:var(--muted);font-size:0.83rem;margin-bottom:1.75rem;">Full essay plans with arguments, counterarguments, named economists, and evaluative conclusions for Band 4. ↓</p>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q1. "Globalisation has brought more benefits than costs to the world economy." Evaluate this view.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Benefits:</strong> Global poverty reduction — World Bank: extreme poverty fell from 36% (1990) to under 10% (2019) — primarily driven by China and East Asia's integration into the global economy. Consumer welfare — real prices of manufactured goods have fallen dramatically; consumers in developed countries gained purchasing power equivalent to significant wage rises. GDP growth — countries that liberalised trade grew faster. Economies of scale — firms access global markets → lower average costs → productive efficiency. Technology diffusion — developing countries gain access to advanced technology and production methods through FDI and trade.</p>
+          <p><strong>Costs:</strong> Within-country inequality — rising Gini coefficients in most developed countries since 1980; "China shock" (Autor et al.) destroyed manufacturing communities with no adequate replacement. Worker exploitation in global supply chains — Bangladesh, Cambodia, Vietnam supply chain scandals. Environmental costs — shipping emissions, pollution havens, resource extraction. Tax revenue loss — OECD: $100-240bn/year from corporate profit shifting. TNC influence on policy — regulatory chill, ISDS clauses limiting democratic policy-making. Financial contagion — globalised financial system transmits crises globally (2008 financial crisis spread from US to world).</p>
+          <p><strong>Evaluation — who gains, who loses?</strong> Between-country perspective: globalisation has been enormously beneficial — the convergence of developing country incomes toward developed country levels represents the largest reduction in human poverty in history. Within-country perspective: globalisation has increased inequality within developed and many developing countries — the gains have accrued disproportionately to capital owners and skilled workers, while unskilled workers and communities dependent on tradeable manufacturing have been left behind. The statement "more benefits than costs" depends on whose welfare is counted and how it is weighted. By utilitarian standards (aggregate welfare), globalisation probably passes the test. By distributional standards (who gains, who loses), the picture is far more contested.</p>
+          <p><strong>Conclusion:</strong> Globalisation has generated enormous aggregate gains — billions lifted from poverty, dramatically lower prices, access to technology and ideas. In this sense, more benefits than costs is probably correct. However, the gains have been very unequally distributed — both between and within countries. The losers from globalisation (manufacturing workers in developed countries, exploited supply chain workers in developing countries, communities whose tax base was eroded by TNC profit shifting) have borne real and substantial costs that simple aggregate welfare comparisons obscure. A complete evaluation acknowledges both the scale of the aggregate benefits and the concentrated, often devastating costs borne by specific groups and communities.</p>
+        </div>
+        <div class="mark-scheme"><strong>Key evaluation:</strong> Between-country vs within-country inequality distinction. Aggregate welfare vs distributional analysis. Cite Autor, Dorn &amp; Hanson (2013) on China shock and World Bank poverty data on the benefits side.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q2. Evaluate the impact of FDI by TNCs on developing countries.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Benefits:</strong> Capital — fills the savings gap; enables investment in productive capacity that domestic capital markets cannot fund. Employment — direct jobs plus supply chain linkages. Technology transfer — spillovers to domestic firms. Export promotion — TNC production raises exports → foreign exchange earnings → import capacity. Tax revenue — corporate tax, employment tax (though offset by transfer pricing). Infrastructure investment — roads, ports, utilities that benefit wider economy. Competition — domestic firms improve efficiency. Human capital — TNC training programmes raise worker skills.</p>
+          <p><strong>Costs:</strong> Profit repatriation — GDP rises but GNI less so. Transfer pricing — taxable profits shifted abroad. Enclave economy — weak domestic linkages; imported inputs, expatriate management. Labour exploitation — low wages, poor conditions, weak regulatory enforcement. Environmental degradation — pollution haven effects. Crowding out domestic firms — TNC competition bankrupts local competitors. Footloose capital — investment can be withdrawn if conditions change (labour costs rise, regulation tightens). Political influence — TNC lobbying constrains domestic policy.</p>
+          <p><strong>Evaluation — what determines the net benefit?</strong> The impact of FDI depends critically on: (1) the type of FDI (resource-seeking extractive vs manufacturing vs services — very different economic impacts); (2) the host country's governance quality (ability to negotiate good contracts, enforce environmental/labour standards, prevent excessive profit shifting); (3) the degree of domestic linkages (enclave vs integrated FDI); (4) the host country's absorptive capacity (education level, infrastructure quality, institutional quality determines whether technology spillovers actually occur). Singapore, South Korea, and Taiwan successfully used FDI to develop sophisticated manufacturing capabilities. Sub-Saharan African resource-rich countries have often seen FDI benefits captured by TNCs and elites with limited broader development impact.</p>
+          <p><strong>Conclusion:</strong> FDI by TNCs creates significant potential benefits for developing countries — capital, employment, technology, and export earnings — but these benefits are not automatic or evenly distributed. The net impact depends heavily on the policy environment: a developing country with strong institutions, effective tax enforcement, robust labour and environmental regulation, and strategic industrial policy can maximise the benefits of FDI while minimising exploitation. Without these conditions, FDI may benefit TNCs and host country elites while leaving broader development objectives unmet. The contrast between East Asian FDI-driven development success and African resource curse demonstrates that governance quality is the decisive variable.</p>
+        </div>
+        <div class="mark-scheme"><strong>GDP vs GNI distinction</strong> is essential. Singapore/South Korea vs sub-Saharan Africa comparison is the strongest evaluative example. "Absorptive capacity" is a sophisticated concept that impresses examiners.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q3. Evaluate the extent to which trade liberalisation is the most important cause of globalisation.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Case for trade liberalisation as most important:</strong> GATT/WTO rounds reduced average tariffs from 40%+ to under 5% — removing the primary legal barrier to international commerce. Without this, lower transport costs and communications would not have translated into trade growth because tariff barriers would still have made imports uncompetitive. Trade liberalisation created the legal and institutional framework within which all other globalisation drivers could operate. FDI flows are greater in countries with open trade regimes — trade and investment liberalisation are complementary. Regional trading blocs (EU, NAFTA) — themselves forms of trade liberalisation — accelerated integration within large economic areas.</p>
+          <p><strong>Alternative causes that may be equally or more important:</strong> ① Technology (transport and communications): even with zero tariffs, 1950s-level transport costs would have prevented the globalisation of supply chains. Containerisation and the internet may be equally fundamental — they changed what was physically and economically possible. ② Political change (Soviet collapse, China's opening): the integration of 2 billion new workers and consumers into the global market economy in the 1990s-2000s was a structural shock that trade liberalisation alone could not have caused — it required geopolitical transformation. ③ TNC growth: TNCs actively drive globalisation through their investment and supply chain decisions — independently of trade policy. Even in the presence of trade barriers, TNCs can circumvent them through FDI (tariff-jumping). ④ Financial liberalisation: deregulation of capital flows in the 1980s-1990s enabled the global movement of finance that underpins TNC investment and trade credit — arguably as important as trade liberalisation for modern globalisation.</p>
+          <p><strong>Conclusion:</strong> Trade liberalisation is a necessary but not sufficient cause of globalisation. It created the permissive legal environment within which other drivers could operate — but technology (enabling global supply chains at viable cost), political change (integrating the former Soviet bloc and China), and TNC expansion (exploiting the liberalised environment) are equally important in explaining why globalisation has been so rapid and deep. The causes are mutually reinforcing rather than hierarchical — trade liberalisation enabled technology to drive globalisation, which incentivised further liberalisation in a virtuous cycle. Assigning primacy to any single cause oversimplifies a complex, multi-driver process.</p>
+        </div>
+        <div class="mark-scheme"><strong>Must address all 5 syllabus causes</strong> to access full marks — not just trade liberalisation and one other. The "most important" claim requires ranking and justification, not just describing each cause.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q4. "Globalisation increases inequality." Evaluate this view.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>How globalisation increases inequality — within countries:</strong> Heckscher-Ohlin model: developed countries are capital and skill abundant → globalisation raises returns to capital and skill → income rises for capital owners and skilled workers. Unskilled workers in developed countries compete with global labour supply → wages stagnate or fall. Piketty: globalisation enables capital (the most mobile factor) to earn higher global returns → capital income rises relative to labour income → wealth inequality increases. "China shock" (Autor): import competition destroys manufacturing jobs in specific communities → local inequality and poverty persists. Skill-biased technological change (often embodied in globally traded technology) amplifies wage inequality.</p>
+          <p><strong>How globalisation reduces inequality — between countries:</strong> Developing countries (especially China, India, Vietnam) have experienced rapid economic growth driven by export-oriented globalisation → hundreds of millions lifted from poverty → convergence of developing country income toward developed country levels. Milanovic (2016): the "elephant curve" of global income growth shows the global middle class (China, emerging markets) has seen the largest income gains of the last 30 years. Between-country inequality has fallen significantly — the greatest poverty reduction in human history occurred during the period of fastest globalisation (1990-2020).</p>
+          <p><strong>Evaluation — it depends on whose inequality:</strong> Global inequality (between all individuals worldwide) has likely fallen — driven by China's enormous middle-class expansion. Between-country inequality has fallen. Within-country inequality has risen in most developed countries and some developing countries. The statement is simultaneously true (within countries) and false (between countries) depending on the unit of analysis. The political salience of within-country inequality (voters experience their own society's distribution, not the global picture) explains why globalisation backlash has been strongest in developed countries despite global poverty reduction.</p>
+          <p><strong>Conclusion:</strong> Globalisation has had complex and contradictory effects on inequality depending on the level of analysis. It has reduced between-country inequality — one of the most significant welfare improvements in economic history. It has increased within-country inequality in most developed countries — contributing to political polarisation, populist movements (Brexit, Trump), and declining trust in economic institutions. The statement "globalisation increases inequality" is true at the national level for developed countries; false at the global level. A complete evaluation cannot be given without specifying which level of inequality is being discussed.</p>
+        </div>
+        <div class="mark-scheme"><strong>Milanovic's elephant curve</strong> and the within vs between country distinction are essential. Piketty on capital vs labour returns. The political consequences (Brexit, Trump) show real-world awareness. This question is among the most frequently examined in the unit.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q5. Evaluate the costs and benefits of globalisation for workers in developing countries.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Benefits for developing country workers:</strong> Employment creation — TNC manufacturing creates millions of jobs. Wages above domestic alternative — even low TNC wages typically exceed informal sector and subsistence agriculture wages. Technology and skill transfer — workers in TNC plants acquire skills and practices → higher human capital → higher long-run wages. Access to export markets — developing country workers producing for global consumers gain income from export earnings. Falling prices — cheap manufactured imports raise real wages of developing country consumers even if nominal wages are modest. China: 850+ million people lifted from extreme poverty (World Bank) largely through export-oriented manufacturing employment.</p>
+          <p><strong>Costs for developing country workers:</strong> Exploitation: long hours, poor safety, low wages, suppression of union rights — Bangladesh garment sector; electronics assembly in China (Foxconn working conditions). Race to the bottom: countries compete for FDI by weakening labour protection → workers in regulatory arbitrage. Footloose capital: if wages rise, TNC relocates to cheaper country (China → Vietnam → Cambodia → Bangladesh) → workers in "graduating" countries face job losses. Structural adjustment: workers in non-export sectors (domestic agriculture, traditional crafts) face competition from global goods → income falls, livelihoods disrupted. Environmental health: pollution from manufacturing in countries with weak environmental regulation → occupational and community health impacts.</p>
+          <p><strong>Evaluation:</strong> The balance of benefits and costs depends critically on: governance quality in the host country (can government enforce labour/environmental standards?), stage of development (early industrialisation benefits most from TNC employment even if imperfect), type of TNC (some TNCs have high labour standards and provide genuine skill transfer; others are purely cost-minimising). The Bangladesh garment sector, despite horrific safety standards pre-Rana Plaza, has been transformative for Bangladeshi women's economic empowerment and poverty reduction — suggesting that even imperfect globalisation-driven employment can be net positive for the world's poorest workers.</p>
+          <p><strong>Conclusion:</strong> Globalisation has been broadly beneficial for workers in developing countries — particularly in East and Southeast Asia — in terms of employment, income, and human capital accumulation. However, the benefits have come with real costs (exploitation, unsafe conditions, environmental harm) and have not been uniformly distributed. Workers in countries with stronger governance, better-enforced labour standards, and more sophisticated industrial policy (South Korea, Malaysia, now Vietnam) have captured more of the gains; workers in weakly governed states have been more vulnerable to exploitation. Policy — not the intrinsic nature of globalisation — determines whether developing country workers are winners or losers.</p>
+        </div>
+        <div class="mark-scheme"><strong>Bangladesh Rana Plaza (2013)</strong> is the essential labour exploitation example. China poverty reduction data is the counterweight. Governance quality as the decisive evaluative variable.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q6. Evaluate the significance of TNCs for the process of globalisation.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>How TNCs drive globalisation:</strong> Global value chains — TNCs organise production across 50+ countries; intra-firm trade is 30-40% of world trade. FDI flows — TNCs account for majority of global FDI; link national economies through capital, technology, and employment. Market integration — TNCs sell globally → convergence of consumer tastes and prices (Big Mac index, iPhone price across markets). Financial integration — TNCs manage global treasury operations, foreign exchange, and capital allocation → link financial markets. Cultural globalisation — TNC brands (Coca-Cola, McDonald's, Nike) spread consumption norms globally.</p>
+          <p><strong>Other factors that drive globalisation independently of TNCs:</strong> Trade liberalisation (GATT/WTO) — preceded and enabled TNC expansion but operates independently. Technology (internet, containerisation) — small firms and individuals now trade globally without TNC intermediation (eBay, Etsy, Alibaba enabling SME cross-border sales). Political change — Soviet collapse and China opening created globalisation independent of TNC decisions. Migration — individuals globalise by moving between countries without any TNC involvement. Government FDI promotion — sovereign wealth funds invest globally without being TNCs.</p>
+          <p><strong>Evaluation:</strong> TNCs are highly significant — they are the primary agents of FDI, global value chains, and technology transfer. But they operate within a framework (trade law, communications infrastructure, political openness) created by governments and technology that they did not create and cannot control. Furthermore, digital globalisation is increasingly bypassing TNCs — consumers access global services directly through platforms, and small firms sell globally without TNC supply chains. TNCs remain central to globalisation but are neither its only driver nor its only beneficiary.</p>
+          <p><strong>Conclusion:</strong> TNCs are among the most significant drivers of globalisation — arguably the primary institutional vehicle through which trade, investment, technology, and cultural flows have expanded globally. But they are both agents and beneficiaries of broader forces (political, technological, institutional) that they did not create. Their significance is greatest in manufactured goods and traditional services; less in digital services where platform-based globalisation bypasses traditional TNC structures. A complete understanding of globalisation requires acknowledging TNCs as central but not exclusive drivers.</p>
+        </div>
+        <div class="mark-scheme"><strong>Intra-firm trade statistics</strong> (30-40% of world trade) demonstrate TNC centrality. Digital globalisation as the contemporary counter-trend. Distinguish TNC role from the enabling conditions (trade policy, technology) they depend on.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q7. Evaluate the environmental costs of globalisation and what can be done to address them.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Environmental costs:</strong> Transport emissions — shipping accounts for ~3% of global CO2; air freight much higher per tonne; international transport is poorly regulated under UNFCCC. Pollution haven hypothesis — TNCs relocate polluting activities to countries with weaker environmental regulation → "exporting pollution." Resource extraction — globalisation drives demand for minerals, fossil fuels, and agricultural land → deforestation, habitat destruction, soil degradation. Increased consumption of cheap goods → more waste, faster product cycles, disposable culture. Supply chain fragmentation → environmental impacts dispersed across multiple countries → harder to regulate and attribute.</p>
+          <p><strong>Counterarguments — globalisation can be environmentally positive:</strong> Technology diffusion — TNCs bring cleaner production technologies to developing countries → environmental improvement relative to locally-owned alternatives. Trade in environmental goods and services — globalisation enables diffusion of solar panels, electric vehicles, wind turbines across borders. Environmental Kuznets Curve: as incomes rise through globalisation → countries demand and can afford higher environmental standards → pollution falls after a threshold. Evidence: China's rapid adoption of renewable energy driven by globally competitive solar supply chain.</p>
+          <p><strong>Policy responses:</strong> Carbon border adjustment mechanism (EU CBAM from 2026) — imposes a carbon price on imports from countries without equivalent carbon pricing, eliminating the pollution haven advantage. International shipping regulation (IMO 2050 decarbonisation target). Supply chain due diligence (EU directive) — requires firms to assess and mitigate environmental impacts in global supply chains. Trade agreements including environmental standards — conditioning market access on meeting minimum environmental requirements. OECD global minimum corporate tax — reduces regulatory arbitrage incentive, potentially including environmental standards.</p>
+          <p><strong>Conclusion:</strong> Globalisation creates significant environmental costs — particularly through transport emissions, pollution havens, and resource extraction. However, it also enables the technology diffusion and international cooperation needed to address these problems. The net environmental impact of globalisation is determined by policy: with appropriate carbon pricing, supply chain regulation, and international environmental standards, globalisation's environmental costs can be substantially reduced while retaining its economic benefits. The EU CBAM is a significant step toward aligning trade policy with environmental objectives — but global adoption is required to prevent carbon leakage to unregulated markets.</p>
+        </div>
+        <div class="mark-scheme"><strong>EU CBAM (2026)</strong> is the most contemporary and impressive policy reference. Environmental Kuznets Curve provides evaluative nuance (not all globalisation is environmentally damaging). Distinguish transport emissions (certain) from pollution haven hypothesis (mixed evidence).</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q8. "The growth of trading blocs has been the main driver of globalisation." Evaluate this view.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Case for trading blocs as main driver:</strong> The EU single market (1992) created the world's largest integrated economic area — free movement of goods, services, capital, and people across 27 countries representing ~18% of world GDP. NAFTA/USMCA deeply integrated North American supply chains. ASEAN + dialogue partners represent a major economic grouping in Asia. AfCFTA (2021) — the world's largest FTA by number of countries — aims to integrate African markets. Trading blocs remove both tariff and non-tariff barriers — standardising regulations and eliminating border checks that are often more significant than tariffs for service trade and supply chain integration. The EU single market's impact on UK-EU trade (and its disruption post-Brexit) demonstrates how significant bloc membership is for trade volumes.</p>
+          <p><strong>Against — other drivers may be more important:</strong> Technology: the internet and containerisation enabled globalisation independently of trade blocs — e-commerce, digital services, and global supply chains would have grown even without formal bloc structures. China's integration: China is not a member of major regional blocs — its globalisation occurred through WTO accession and bilateral trade liberalisation, not bloc membership. Multilateral liberalisation (WTO): global trade rules, not regional blocs, established the baseline for global trade. TNCs: firms organised global value chains based on their own cost and market logic, independently of which blocs existed. Political change: Soviet collapse and China opening — driven by geopolitics, not trading blocs.</p>
+          <p><strong>Evaluation:</strong> Trading blocs have been important accelerators of globalisation within regions — particularly intra-European and intra-North American trade. But they are primarily regional phenomena, and globalisation is defined by increasing integration across all regions, not just within them. Between-region globalisation (US-China, EU-Asia) has been driven by multilateral liberalisation, technology, and TNC investment rather than bloc membership. Furthermore, blocs can be trade-diverting — increasing integration within the bloc while potentially reducing integration with non-members. The EU's common external tariff has trade-diverted some non-EU imports.</p>
+          <p><strong>Conclusion:</strong> Trading blocs have been important drivers of regional economic integration — particularly within Europe and North America. But "main driver" of globalisation overall is too strong: the technology revolution (containerisation, internet), multilateral trade liberalisation (GATT/WTO), and political opening (China, Soviet collapse) have been at least equally important in driving global integration. Trading blocs contribute to globalisation within their boundaries while potentially impeding globalisation across them — their net global effect is mixed. Technology and political change have driven globalisation more consistently and more broadly than regional bloc formation.</p>
+        </div>
+        <div class="mark-scheme"><strong>EU Brexit evidence</strong> demonstrates bloc significance. China's non-bloc globalisation provides the strongest counter-case. Trade creation vs diversion shows blocs are not unambiguously pro-globalisation. Must engage with all five causes from the syllabus.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q9. Evaluate the impact of globalisation on economic growth in developing countries.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Channels through which globalisation boosts growth:</strong> Export-led growth — access to global markets allows developing countries to specialise in comparative advantage sectors → higher productivity → GDP growth. FDI — brings capital, technology, and management expertise that domestic resources cannot provide. Technology transfer — developing countries adopt proven technologies from abroad → leapfrogging (mobile banking in Kenya, solar energy in Bangladesh). Remittances — migrant workers send money home → significant source of external income (global remittances exceed $700bn/year, exceeding total ODA). Competitive pressure — import competition forces domestic firms to improve → productivity growth.</p>
+          <p><strong>Evidence of globalisation-driven growth:</strong> China: GDP grew at 9-10% per year for 30 years driven by export-oriented globalisation → 850m people lifted from poverty. South Korea, Taiwan, Singapore: export-led industrialisation → middle income status within one generation. Vietnam: opened to trade and FDI in 1986 (Doi Moi reforms) → one of fastest-growing economies in Asia. These "East Asian miracle" economies are the strongest evidence for globalisation promoting development.</p>
+          <p><strong>Costs and limitations:</strong> Not all developing countries have benefited equally — Africa has largely missed the first wave of export-led industrialisation (governance failures, infrastructure deficits, commodity dependence). Dependency theory: globalisation may lock developing countries into exporting low-value commodities and importing high-value manufactures → terms of trade deterioration over time (Prebisch-Singer hypothesis). Volatility: developing country growth more exposed to global demand shocks → financial crises in developed countries transmit rapidly. Resource curse: natural resource FDI may not generate broad development (Dutch disease, enclave economies).</p>
+          <p><strong>Conclusion:</strong> Globalisation has been a powerful driver of economic growth for developing countries that successfully integrated into global manufacturing value chains — particularly in East and Southeast Asia. However, the benefits have not been automatic or universal — they depend on governance quality, infrastructure, education, industrial policy, and institutional capacity. Countries that have failed to develop these foundations have not benefited and may have been harmed (commodity exporters facing terms of trade deterioration). Globalisation is a necessary but not sufficient condition for developing country growth — domestic policy determines whether global integration drives development or reinforces underdevelopment.</p>
+        </div>
+        <div class="mark-scheme"><strong>East Asian miracle vs Africa divergence</strong> is the essential comparative example. Prebisch-Singer hypothesis for sophisticated evaluation of commodity dependency. Remittances as an underappreciated globalisation-development link.</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-header" onclick="toggleQ(this)">
+        <span class="q-marks">20 MARKS</span>
+        <span class="q-text">Q10. Evaluate the view that the costs of globalisation outweigh the benefits for developed countries.</span>
+      </div>
+      <div class="q-body">
+        <div class="answer-section"><h4>Essay Plan</h4>
+          <p><strong>Costs for developed countries:</strong> Manufacturing job displacement — Autor, Dorn &amp; Hanson (2013): "China shock" destroyed 2-3 million US manufacturing jobs with limited offsetting job creation. Wage inequality — unskilled workers face global competition → wage stagnation; skilled workers and capital owners gain → rising Gini. Tax revenue loss — TNC profit shifting costs OECD governments hundreds of billions annually. Financial contagion — globalised financial system transmitted 2008 US crisis globally. Loss of policy autonomy — capital mobility constrains governments (cannot raise taxes significantly without capital flight); "race to the bottom" on corporation tax. Cultural concerns — global cultural homogenisation displacing local cultures.</p>
+          <p><strong>Benefits for developed countries:</strong> Consumer welfare — cheap imports from China and emerging markets dramatically raised real purchasing power for all income groups (particularly beneficial for lower-income households who spend more on manufactures). Economic growth — access to global markets, FDI inflows, specialisation gains → higher GDP. Profits and returns to capital — developed country firms gained enormously from global market access and low-cost manufacturing. Technology and innovation — global competition and knowledge spillovers → faster innovation. Immigration — skilled migrants fill labour market gaps (NHS doctors, tech workers); entrepreneurial immigrants drive innovation (significant proportion of US tech unicorns founded by immigrants). Export opportunities — developed country exporters (luxury goods, financial services, pharmaceuticals, technology) gained from global market access.</p>
+          <p><strong>Evaluation — for whom in developed countries?</strong> The distributional question is crucial. For high-income, skilled, capital-owning developed country residents: globalisation has been enormously beneficial — higher incomes, cheaper goods, global investment returns. For low-income, unskilled, manufacturing-community developed country residents: globalisation has been costly — job losses, wage stagnation, community decline. The aggregate net welfare effect for developed countries is probably positive (more winners than losers in aggregate welfare terms). But the concentrated losses suffered by specific communities (US Rust Belt, UK ex-manufacturing towns) have been severe enough to drive significant political backlash — Brexit, Trump, rise of anti-globalisation politics — suggesting that even if aggregate benefits exceed aggregate costs, the political sustainability of globalisation depends on addressing the distributional consequences.</p>
+          <p><strong>Conclusion:</strong> The aggregate benefits of globalisation for developed countries likely exceed the aggregate costs — consumers gained enormously from cheap imports, exporters from market access, and capital owners from global investment returns. However, "outweigh" in the aggregate obscures the concentrated, severe costs borne by specific communities and workers — costs that have not been adequately compensated by redistribution policy. The political backlash against globalisation in developed countries (Brexit, protectionism, populism) reflects the failure to manage distributional consequences rather than aggregate net costs. A more complete evaluation requires both welfare economics (aggregate costs and benefits) and political economy (distributional consequences and their political effects) perspectives.</p>
+        </div>
+        <div class="mark-scheme"><strong>The distributional question</strong> (aggregate vs within-group welfare) is the sophisticated evaluation. Political backlash (Brexit, Trump) as evidence that distributional costs matter even when aggregate benefits dominate. Autor et al. "China shock" and consumer surplus gains must both be quantified if possible.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ESSAY FRAMEWORK -->
+<div class="section-block">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-num">★</span>
+    <span class="section-title">20-Mark Essay Framework for Globalisation Questions</span>
+    <span class="toggle-icon">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="obj-grid">
+      <div class="obj-card"><h4>① Define &amp; Frame</h4><p>Define globalisation and any key terms. State whether you are analysing aggregate welfare, distributional effects, or both. Specify which stakeholders or countries you are focusing on.</p></div>
+      <div class="obj-card"><h4>② Benefits Case</h4><p>Growth, poverty reduction, consumer surplus, EoS, technology diffusion. Use specific data where possible (World Bank poverty statistics, trade volumes).</p></div>
+      <div class="obj-card"><h4>③ Costs Case</h4><p>Displaced workers, inequality, environment, tax avoidance, TNC influence. Distinguish within-country from between-country effects.</p></div>
+      <div class="obj-card"><h4>④ Evaluate — Who Benefits?</h4><p>Distinguish winners and losers within and between countries. Aggregate welfare vs distributional analysis. Short-run vs long-run effects.</p></div>
+      <div class="obj-card"><h4>⑤ Qualified Conclusion</h4><p>State conditions under which benefits dominate. Acknowledge distributional concerns. Reference policy solutions (CBAM, minimum tax, redistribution).</p></div>
+    </div>
+    <div class="exam-tip">Key economists and concepts: Autor, Dorn &amp; Hanson (2013) — "China shock"/import competition; Milanovic — elephant curve/global inequality; Piketty — capital vs labour returns; Prebisch-Singer — commodity terms of trade; Environmental Kuznets Curve — environment vs income. Data: World Bank (extreme poverty 36%→10%); OECD ($100-240bn transfer pricing losses); ILO (global migration 280m+). Citing these places your answer in the top band.</div>
+  </div>
+</div>
+
+</main>
+<a class="back-top" href="#" title="Back to top">↑</a>
+
+<script>
+function toggleSection(h){
+  const b=h.nextElementSibling;
+  const i=h.querySelector('.toggle-icon');
+  const open=b.style.display!=='none'&&b.style.display!=='';
+  b.style.display=open?'none':'block';
+  i.style.transform=open?'rotate(0deg)':'rotate(180deg)';
+}
+function toggleQ(h){h.nextElementSibling.classList.toggle('open');}
+document.querySelectorAll('.section-body').forEach(b=>b.style.display='block');
+document.querySelectorAll('.toggle-icon').forEach(i=>i.style.transform='rotate(180deg)');
+</script>
+</body>
+</html>
